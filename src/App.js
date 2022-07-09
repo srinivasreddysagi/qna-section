@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Qna from "./components/Qna";
+import Data from "./qnas.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="faq-page">
+      <h1>FAQ</h1>
+      <div className="qna-container">
+        {Data.map((item) => (
+          <Qna key={item.key} {...item}></Qna>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,13 +1,137 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  box-sizing: border-box;
+  outline: none;
+}
+
+:root {
+  --clr-blk: hsl(210, 29.03%, 24.31%);
+  --clr-red: hsl(5.61, 78.08%, 57.06%);
+  --clr-white: hsl(192, 15.15%, 93.53%);
+  --clr-white-blur: rgb(255,255,255, 0.8);
+  --clr-blue: hsl(204.07, 69.87%, 53.14%);
+  --clr-dark-blue: hsl(204.07, 69.87%, 53.14%);
+  --clr-navy-blue: hsl(258, 100%, 17.65%);
+  --clr-purple-1: hsl(258.18, 78.2%, 58.63%);
+  --clr-purple-2: hsl(258.11, 100%, 66.86%);
+  --clr-purple-3: hsl(258.18, 78.2%, 58.63%);
+  --clr-purple-4: hsl(258.13, 100%, 64.31%);
+
+  --clr-blue-dark: hsl(266.57, 85.37%, 16.08%);
+  --clr-blue-1: hsl(266.2, 60.68%, 22.94%);
+  --clr-blue-2: hsl(265.3, 45.36%, 35.88%);
+  --clr-blue-3: hsl(267.64, 35.18%, 49.61%);
+  --clr-blue-4: hsl(267.64, 35.18%, 49.61%);
+
+  --font: "Roboto", sans-serif;
+  --trans: all 0.5s ease;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--clr-blk);
+  font-family: var(--font);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.faq-page {
+  width: 100%;
+  padding: 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq-page h1 {
+  font-size: 2.4rem;
+  color: #fff;
+  letter-spacing: 0.2rem;
+}
+
+.qna-container {
+  width: 95%;
+  margin: 2rem 0;
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.qna {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.question {
+  background-color: var(--clr-white-blur);
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 100%;
+  border: none;
+  text-align: left;
+  padding: 0.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.icon {
+  font-size: 1.6rem;
+  position: absolute;
+  right: 0.5rem;
+}
+
+.icon.show {
+  transform: rotate(-180deg);
+  transition: var(--trans);
+}
+
+.icon.hide {
+  transform: rotate(0deg);
+  transition: var(--trans);
+}
+
+.answer {
+  background-color: var(--clr-white-blur);
+  padding: 1rem;
+  transform: translateY(-100%);
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.answer.hide {
+  transition: var(--trans);
+  opacity: 0;
+  display: none;
+}
+
+.answer.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0%);
+  transition: var(--trans);
 }
