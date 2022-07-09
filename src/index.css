@@ -86,13 +86,13 @@ code {
 .question {
   background-color: var(--clr-white-blur);
   font-family: inherit;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   width: 100%;
   border: none;
   text-align: left;
   padding: 0.5rem;
-  padding-right: 1.5rem;
+  padding-right: 2rem;
   position: relative;
   display: flex;
   align-items: center;
